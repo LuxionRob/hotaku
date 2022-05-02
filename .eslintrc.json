@@ -22,7 +22,19 @@
         "prettier"
     ],
     "rules": {
-        "react/react-in-jsx-scope": ["off"],
-        "react/jsx-uses-react": ["off"]
+        "react/react-in-jsx-scope": [
+            "off"
+        ],
+        "react/no-array-index-key": [
+            "off"
+        ],
+        "react/jsx-uses-react": [
+            "off"
+        ],
+        "prettier/prettier": [
+            "off",
+            {},
+            {}
+        ]
     }
 }

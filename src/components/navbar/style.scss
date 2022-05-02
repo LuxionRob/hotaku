@@ -1,4 +1,4 @@
-.navbar {
+.navbar-container {
   $red-salsa: #ff595eff;
   $sunglow: #ffca3aff;
   $yellow-green: #8ac926ff;
@@ -10,65 +10,64 @@
   $rose-madder: #e71d36ff;
   $orange-peel: #ff9f1cff;
 
-  display: flex;
-  line-height: 64px;
-  width: 100vw;
-  background-color: $green-blue-crayola;
-  position: fixed;
-  justify-content: center;
+  width: 100%;
   
-  
-  .nav-item {
+  .navbar {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 32px;
+    line-height: 64px;
+    width: 100vw;
+    background-color: $green-blue-crayola;
+    position: fixed;
+    justify-content: flex-start;
+    padding: 0 384px;
     
-    &:first-child {
-      padding-left: 16px;
-    }
-
-    .logo {
-      height: 64px;
-      width: 72px;
+    .nav-item {
+      color: $baby-powder;
+      display: flex;
       justify-content: center;
       align-items: center;
-    }
-    
-    &:hover { 
-      background-color: $baby-powder;
-      opacity: 0.8;
+      padding: 0 32px;
+      user-select: none;
+      
+      &:first-child {
+        padding-left: 16px;
+      }
+
+      .logo {
+        height: 64px;
+        width: 72px;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      &:hover { 
+        background-color: $baby-powder;
+        color: $yellow-green;
+      }
     }
   }
 
-  .genre-subnavbar {
-    position: relative;
-    .genre-subnavbar-dropdown {
-      box-shadow:  0px 0px 5px 2px $yellow-green;
-      max-height: 400px;
-      display: none;
-      justify-content: center;
+  .genre-subnav-dropdown-menu {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 64px;
+    max-height: 400px;
+    position: absolute;
+    border-bottom: 1px solid $rich-black-fogra-29;
+    border-top: 1px solid $rich-black-fogra-29;
+    flex-wrap: wrap;
 
-      .genre-subnavbar-item {
-        display: flex;
-        align-items: center;
-        height: 48px;
-        padding: 8px;
-
-        &:hover {
-          opacity: .8;
-          font-weight: 700;
-          color: $yellow-green;
-        }
-      }
-    }
-
-    &:hover .genre-subnavbar-dropdown {
+    .genre-subnav-dropdown-item {
       display: flex;
-      position: absolute;
-      flex-wrap: wrap;
-      top: 64px;
-      left: -128px;
+      height: 64px;
+      align-items: center;
+      padding: 0 16px;
+
+      &:hover {
+        color: $yellow-green;
+        font-weight: bold;
+      }
     }
   }
 }
