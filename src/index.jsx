@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import './global.css'
+import './global.scss'
+import './assets/styles/monoclass.css'
 import { BrowserRouter } from 'react-router-dom'
 import HomePage from './pages/HomePage'
 
