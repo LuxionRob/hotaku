@@ -1,34 +1,27 @@
-.navbar-container {
-  $red-salsa: #ff595eff;
-  $sunglow: #ffca3aff;
-  $yellow-green: #8ac926ff;
-  $green-blue-crayola: #1982c4ff;
-  $royal-purple: #6a4c93ff;
-  $rich-black-fogra-29: #011627ff;
-  $baby-powder: #fdfffcff;
-  $tiffany-blue: #2ec4b6ff;
-  $rose-madder: #e71d36ff;
-  $orange-peel: #ff9f1cff;
+@use  '../../assets/themes/default/colorVariable.scss' as color;
 
+.navbar-container {
   width: 100%;
-  
+
   .navbar {
     display: flex;
     line-height: 64px;
     width: 100vw;
-    background-color: $green-blue-crayola;
+    background-color: color.$space-cadet;
     position: fixed;
     justify-content: flex-start;
     padding: 0 384px;
-    
+
     .nav-item {
-      color: $baby-powder;
       display: flex;
+      justify-content: space-between;
       justify-content: center;
-      align-items: center;
       padding: 0 32px;
       user-select: none;
-      
+      font-weight: bold;
+      transition: all 0.25s ease;
+      color: color.$baby-powder;
+
       &:first-child {
         padding-left: 16px;
       }
@@ -41,31 +34,39 @@
       }
       
       &:hover { 
-        background-color: $baby-powder;
-        color: $yellow-green;
+        color: color.$yellow-green;
+        padding: 0 48px;
+        letter-spacing: 4px;
+        box-shadow: 0 0 8px color.$caribbean-green,
+        0 0 16px color.$caribbean-green;
       }
     }
   }
 
   .genre-subnav-dropdown-menu {
     display: flex;
+    position: absolute;
     width: 100%;
     justify-content: center;
     margin-top: 64px;
     max-height: 400px;
     position: absolute;
-    border-bottom: 1px solid $rich-black-fogra-29;
-    border-top: 1px solid $rich-black-fogra-29;
+    border-bottom: 1px solid color.$manatee;
+    border-top: 1px solid color.$manatee;
     flex-wrap: wrap;
+    background-color: color.$rich-black-fogra-29;
 
     .genre-subnav-dropdown-item {
       display: flex;
       height: 64px;
       align-items: center;
       padding: 0 16px;
+      color: color.$caribbean-green;
+      transition: all 0.25s ease;
 
       &:hover {
-        color: $yellow-green;
+        letter-spacing: 2px;
+        color: color.$yellow-green;
         font-weight: bold;
       }
     }
