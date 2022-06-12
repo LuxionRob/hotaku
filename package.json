@@ -20,7 +20,7 @@
   },
   "scripts": {
     "start": "concurrently --kill-others \"PORT=3006 react-scripts start\" \"tailwind build -i src/assets/styles/tailwind/tailwind.css -o src/assets/styles/tailwind.css --watch\"",
-    "build": "concurrently --kill-others react-scripts build",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint .",
