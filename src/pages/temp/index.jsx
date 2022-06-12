@@ -1,6 +1,6 @@
 const Temp = () => {
   return (
-    <div className="w-full h-full bg-slate-900"/>
+    <div className="block w-full h-full bg-slate-900"/>
   )
 }
 

@@ -9,7 +9,6 @@ const InputBox = ({ className }) => {
 
   const handleInputChange = (e) => {
     setInputName(e.target.value)
-    console.log(inputName)
   }
 
   const onEnter = () => {
