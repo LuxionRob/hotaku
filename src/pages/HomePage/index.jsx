@@ -1,8 +1,13 @@
-import Navbar from '../../components/navbar'
+import DefaultLayout from '../../layouts'
+import Temp from '../temp';
 import './style.scss'
 
-function HomePage() {
-  return <Navbar />
+const HomePage = () => {
+  return (
+    <DefaultLayout>
+        <Temp/>
+    </DefaultLayout>
+  )
 }
 
 export default HomePage

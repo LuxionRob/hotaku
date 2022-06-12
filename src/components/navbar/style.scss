@@ -1,16 +1,14 @@
 @use  '../../assets/themes/default/colorVariable.scss' as color;
 
 .navbar-container {
-  width: 100%;
+  background-color: color.$space-cadet;
 
   .navbar {
-    display: flex;
     line-height: 64px;
-    width: 100vw;
-    background-color: color.$space-cadet;
-    position: fixed;
-    justify-content: flex-start;
-    padding: 0 384px;
+
+    .ant-input-affix-wrapper {
+      transform: translateY(50%);
+    }
 
     .nav-item {
       display: flex;
@@ -22,42 +20,32 @@
       transition: all 0.25s ease;
       color: color.$baby-powder;
 
-      &:first-child {
-        padding-left: 16px;
-      }
-
-      .logo {
-        height: 64px;
-        width: 72px;
-        justify-content: center;
-        align-items: center;
-      }
-      
       &:hover { 
         color: color.$yellow-green;
         padding: 0 48px;
         letter-spacing: 4px;
         box-shadow: 0 0 8px color.$caribbean-green,
-        0 0 16px color.$caribbean-green;
+          0 0 16px color.$caribbean-green;
       }
     }
   }
 
+  .active {
+    color: color.$yellow-green !important;
+    padding: 0 48px !important;
+    letter-spacing: 4px;
+    box-shadow: 0 0 8px color.$caribbean-green,
+      0 0 16px color.$caribbean-green;
+  }
+
   .genre-subnav-dropdown-menu {
-    display: flex;
-    position: absolute;
-    width: 100%;
-    justify-content: center;
-    margin-top: 64px;
-    max-height: 400px;
-    position: absolute;
     border-bottom: 1px solid color.$manatee;
     border-top: 1px solid color.$manatee;
-    flex-wrap: wrap;
     background-color: color.$rich-black-fogra-29;
 
     .genre-subnav-dropdown-item {
       display: flex;
+      position: relative;
       height: 64px;
       align-items: center;
       padding: 0 16px;
@@ -65,10 +53,11 @@
       transition: all 0.25s ease;
 
       &:hover {
-        letter-spacing: 2px;
+        letter-spacing: 4px;
         color: color.$yellow-green;
         font-weight: bold;
       }
     }
   }
+
 }

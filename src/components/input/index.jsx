@@ -1,9 +1,10 @@
 import { Input } from 'antd'
 import { useState } from 'react'
-// import propTypes from 'prop-types'
+import PropTypes from 'prop-types'
+import { SearchOutlined  } from '@ant-design/icons'
 import './style.scss'
 
-function InputBox() {
+const InputBox = ({ className }) => {
   const [inputName, setInputName] = useState('')
 
   const handleInputChange = (e) => {
@@ -18,16 +19,22 @@ function InputBox() {
   return (
     <Input
       value={inputName}
+      bordered={false}
       placeholder='Input name....'
-      className='border-1px'
+      className={`py-6 mr-6 ${className}`}
+      suffix={ <SearchOutlined /> }
       onChange={handleInputChange}
       onEnter={onEnter}
     />
   )
 } 
 
-// InputBox.propTypes = {
-  
-// }
+InputBox.defaultProps = {
+  className: "",
+}
+
+InputBox.propTypes = {
+  className: PropTypes.string,
+}
 
 export default InputBox

@@ -1,0 +1,8 @@
+@use '../assets/themes/default/colorVariable.scss' as color;
+
+#logo {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 48px;
+  color: color.$caribbean-green;
+  position: relative;
+}

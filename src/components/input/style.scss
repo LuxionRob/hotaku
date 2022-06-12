@@ -1,0 +1,25 @@
+@use '../../assets/themes/default/colorVariable.scss' as color;
+
+.ant-input-affix-wrapper {
+  border: none;
+  font-size: 14px;
+  background-color: color.$cultured;
+  transition: all 0.5s ease;
+  box-shadow: none;
+
+  &-focused {
+    margin-right: 50%;
+    transform: translateX(50%);
+    box-shadow: inset 0 0 4px color.$caribbean-green,
+      inset 0 0 8px color.$caribbean-green;
+    
+      & .ant-input {
+        font-size: 20px;
+      }
+  }
+
+  .ant-input {
+    outline: none;
+  }
+
+}

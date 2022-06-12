@@ -1,13 +1,13 @@
 import { useState } from 'react'
 // import { Dropdown, Button } from 'antd'
 import './style.scss'
-import logo from '../../assets/images/logo.png'
+import '../../assets/logo.scss'
 import Input from '../input'
 
 const genre = [ 'Action', 'Adult', 'Adventure', 'Anime', 'Chuyển Sinh', 'Comedy', 'Comic', 'Demons', 'Detective', 'Doujinshi', 'Drama', 'Ecchi', 'Fantasy', 'Gender Bender', 'Harem', 'Historical', 'Horror', 'Huyền Huyễn', 'Isekai', 'Josei', 'Mafia', 'Magic', 'Manhua', 'Manhwa', 'Martial Arts', 'Mature', 'Military', 'Mystery', 'One shot', 'Psychological', 'Romance', 'School Life', 'Sci-fi', 'Seinen', 'Shoujo', 'Shoujo Ai', 'Shounen', 'Shounen Ai', 'Slice of life', 'Smut', 'Sports', 'Supernatural', 'Tragedy', 'Truyện Màu', 'Yaoi', 'Yuri' ]
 
-export default function Navbar() {
-  const [ isGenreDropdownVisible, setIsGenreDropdownVisible ] = useState(true)
+const Navbar = () => {
+  const [ isGenreDropdownVisible, setIsGenreDropdownVisible ] = useState(false)
 
   // useEffect({
   //   // Fetch avt
@@ -23,28 +23,40 @@ export default function Navbar() {
     setIsGenreDropdownVisible(false)
   }
 
+  const handleMouseEnterDropdown = () => {
+    setIsGenreDropdownVisible(true)
+    const genreDropdown = document.getElementsByClassName('genre-subnavbar')
+    genreDropdown[0].classList.add('active')
+  }
+
+  const handleMouseLeaveDropdown = () => {
+    setIsGenreDropdownVisible(false)
+    const genreDropdown = document.getElementsByClassName('genre-subnavbar')
+    genreDropdown[0].classList.remove('active')
+  }
+
   return (
-    <div className="navbar-container">
-      <div className="navbar">
-        <a href="/" className="nav-item">
-          <img src={logo} className="logo" alt="logo" />
+    <div className="navbar-container flex justify-between items-center h-20 pl-52 relative">
+      <div className="navbar flex justify-start">
+        <a id="logo" href="/" className="nav-item justify-center items-center">
+          Hotaku
         </a>
         <div 
           type="button"
-          className="genre-subnavbar nav-item"
+          className="genre-subnavbar nav-item justify-center items-center relative"
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
           onFocus={() => {}}
         >
           Genre
         </div>
-        <Input/>
       </div>
+      <Input className="flex"/>
       { isGenreDropdownVisible ? (
         <div
-        className="genre-subnav-dropdown-menu"
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
+          className="genre-subnav-dropdown-menu flex absolute w-full flex-wrap top-20 right-0 justify-center px-52"
+          onMouseEnter={handleMouseEnterDropdown}
+          onMouseLeave={handleMouseLeaveDropdown}
         >
           {
             genre.map((element, index) => {
@@ -53,7 +65,7 @@ export default function Navbar() {
                 <a
                   key={index + 1}
                   href={link}
-                  className="genre-subnav-dropdown-item"
+                  className="genre-subnav-dropdown-item w-48 justify-center text-center"
                 >
                   {element}
                 </a>
@@ -66,3 +78,5 @@ export default function Navbar() {
     </div>
   )
 }
+
+export default Navbar

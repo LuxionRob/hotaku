@@ -1,3 +1,5 @@
+@use 'assets/themes/default/colorVariable.scss' as color;
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -15,4 +17,24 @@ code {
 a {
 	text-decoration: none;
   color: #000;
+}
+
+.ant-input-affix-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid color.$yellow-green;
+  background-color: color.$baby-powder;
+  height: 32px;
+  padding: 0 16px;
+  border-radius: 4px;
+
+  &:focus .ant-input {
+    border: none !important;
+  }
+  
+  .ant-input {
+    border: none;
+  }
+
 }
