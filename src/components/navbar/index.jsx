@@ -2,19 +2,13 @@ import { useState } from 'react'
 // import { Dropdown, Button } from 'antd'
 import './style.scss'
 import '../../assets/logo.scss'
-import Input from '../input'
+import Search from '../Search'
 
 const genre = [ 'Action', 'Adult', 'Adventure', 'Anime', 'Chuyển Sinh', 'Comedy', 'Comic', 'Demons', 'Detective', 'Doujinshi', 'Drama', 'Ecchi', 'Fantasy', 'Gender Bender', 'Harem', 'Historical', 'Horror', 'Huyền Huyễn', 'Isekai', 'Josei', 'Mafia', 'Magic', 'Manhua', 'Manhwa', 'Martial Arts', 'Mature', 'Military', 'Mystery', 'One shot', 'Psychological', 'Romance', 'School Life', 'Sci-fi', 'Seinen', 'Shoujo', 'Shoujo Ai', 'Shounen', 'Shounen Ai', 'Slice of life', 'Smut', 'Sports', 'Supernatural', 'Tragedy', 'Truyện Màu', 'Yaoi', 'Yuri' ]
 
 const Navbar = () => {
   const [ isGenreDropdownVisible, setIsGenreDropdownVisible ] = useState(false)
 
-  // useEffect({
-  //   // Fetch avt
-  //   // Fetch user name
-  //   // Fetch nofication
-  // }, [])
-  
   const handleMouseEnter = () => {
     setIsGenreDropdownVisible(true)
   }
@@ -36,14 +30,14 @@ const Navbar = () => {
   }
 
   return (
-    <div className="navbar-container flex justify-between items-center h-20 pl-52 relative">
-      <div className="navbar flex justify-start">
-        <a id="logo" href="/" className="nav-item justify-center items-center">
+    <div className="flex items-center justify-between h-20 navbar-container pl-52">
+      <div className="flex justify-start navbar">
+        <a id="logo" href="/" className="items-center justify-center nav-item">
           Hotaku
         </a>
         <div 
           type="button"
-          className="genre-subnavbar nav-item justify-center items-center relative"
+          className="relative items-center justify-center genre-subnavbar nav-item"
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
           onFocus={() => {}}
@@ -51,10 +45,12 @@ const Navbar = () => {
           Genre
         </div>
       </div>
-      <Input className="flex"/>
+      <Search
+        className="flex px-2"
+      />
       { isGenreDropdownVisible ? (
         <div
-          className="genre-subnav-dropdown-menu flex absolute w-full flex-wrap top-20 right-0 justify-center px-52"
+          className="absolute right-0 flex flex-wrap justify-center w-full genre-subnav-dropdown-menu top-20 px-52"
           onMouseEnter={handleMouseEnterDropdown}
           onMouseLeave={handleMouseLeaveDropdown}
         >
@@ -65,7 +61,7 @@ const Navbar = () => {
                 <a
                   key={index + 1}
                   href={link}
-                  className="genre-subnav-dropdown-item w-48 justify-center text-center"
+                  className="justify-center w-48 text-center genre-subnav-dropdown-item"
                 >
                   {element}
                 </a>

@@ -1,0 +1,23 @@
+@use '../../assets/themes/default/colorVariable.scss' as color;
+
+.ant-input-search{
+  border: none;
+  font-size: 14px;
+  background-color: color.$cultured;
+  box-shadow: none;
+  transition: margin 0.5s ease,
+              transform 0.5s ease;
+
+  .ant-input {
+    outline: none;
+  }
+
+  .ant-input-wrapper {
+    display: flex;
+    align-items: center;
+    .ant-btn {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
