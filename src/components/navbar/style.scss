@@ -2,19 +2,6 @@
 
 .navbar-container {
   background-color: color.$space-cadet;
-  
-  .ant-input-affix-wrapper {
-    &-focused {
-      margin-right: 50%;
-      transform: translateX(50%);
-      box-shadow: inset 0 0 4px color.$caribbean-green,
-        inset 0 0 8px color.$caribbean-green;
-    
-      & .ant-input {
-        font-size: 20px;
-      }
-    }
-  }
 
   .navbar {
     line-height: 80px;

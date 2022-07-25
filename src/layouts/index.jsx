@@ -11,8 +11,9 @@ const DefaultLayout = ({ children }) => {
       <Header>
         <Navbar />
       </Header>
-      <Content>
+      <Content className='relative flex justify-center'>
         { children }
+        <div className='absolute inset-0 bg bg-slate-900 -z-10 h-[2000px]' />
       </Content>
     </Layout>
   )
